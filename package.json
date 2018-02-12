@@ -8,7 +8,11 @@
   },
   "scripts": {
     "test": "mocha test/mocha.js",
-    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha --reporter test/mocha.js"
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha --reporter test/mocha.js",
+    "jest": "jest test/react.test.js",
+    "react": "npm i react react-dom",
+    "react:test": "npm i -D react-test-renderer",
+    "babel": "npm i -D babel-jest babel-plugin-transform-class-properties babel-preset-env babel-preset-react"
   },
   "repository": {
     "type": "git",
@@ -21,11 +25,23 @@
     "url": "https://github.com/LDQ-first/node-test-practice/issues"
   },
   "homepage": "https://github.com/LDQ-first/node-test-practice#readme",
-  "dependencies": {},
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
   "devDependencies": {
+    "babel-jest": "^22.2.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "benchmark": "^2.1.4",
     "chai": "^4.1.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "istanbul": "^0.4.5",
-    "mocha": "^5.0.0"
+    "jest": "^22.2.2",
+    "mocha": "^5.0.0",
+    "react-test-renderer": "^16.2.0",
+    "sinon": "^4.3.0"
   }
 }
