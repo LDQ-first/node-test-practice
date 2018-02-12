@@ -1,6 +1,7 @@
 import React from 'react'
 import { mount, configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
+import sinon from 'sinon'
 import Demo from '../src/react'
 
 configure({ adapter: new Adapter() })
@@ -32,10 +33,13 @@ describe('UI test #react', () => {
   })
   it('should change when props change', () => {
     const wrapper = mount(<Demo title="demo" value={5}/>)
+    sinon.spy(Demo.prototype, 'componentWillReceiveProps')
     const title = wrapper.find('h1')
     wrapper.setProps({
       title: 'react'
     })
     expect(title.text()).toBe('react')
+    const callCount = Demo.prototype.componentWillReceiveProps.callCount
+    expect(callCount).toBe(1)
   })
 })
