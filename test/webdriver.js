@@ -38,7 +38,6 @@ describe('百度首页 UI 测试', function () {
   it('搜索 test', async () => {
     const input = await driver.findElement(By.id('kw'))
     await input.sendKeys('test')
-    driver.sleep(100000000)
     const button = await driver.findElement(By.id('su'))
     await button.click()
     const handler = await driver.getWindowHandle()
